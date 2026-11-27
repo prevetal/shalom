@@ -1,0 +1,369 @@
+/*------------------------------
+    Repatriation from Russia
+------------------------------*/
+.repatriation_from_russia
+{
+    .block_head
+    {
+        .title,
+        .desc
+        {
+            width: 675px;
+        }
+    }
+
+
+    .info_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_l);
+
+        padding: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        .top
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: var(--inner_gap_l);
+
+            padding-bottom: var(--inner_gap_l);
+
+            border-bottom: 1px solid var(--divider_color);
+
+
+            .title
+            {
+                width: 338px;
+
+                font-size: var(--font_size_xl);
+                font-weight: 400;
+
+                color: var(--dark_strong_color);
+            }
+        }
+
+
+        .stat
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_s);
+
+            width: 383px;
+            max-width: 100%;
+            padding: var(--inner_gap_xs);
+
+            color: var(--dark_strong_color);
+            border-radius: var(--border_radius_s);
+            background: var(--bg_primary_light);
+
+
+            .icon
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                width: 32px;
+
+                border-radius: 50%;
+                background: var(--bg_gradient_primary);
+
+                aspect-ratio: 1 / 1;
+
+
+                img
+                {
+                    display: block;
+
+                    width: 16px;
+                }
+            }
+
+
+            .text
+            {
+                min-width: 0;
+
+
+                b
+                {
+                    font-weight: 600;
+                }
+            }
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+        }
+
+
+        .note
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_s);
+
+            padding: var(--inner_gap_s);
+
+            color: var(--dark_strong_color);
+            border-radius: var(--border_radius_xs);
+            background: var(--bg_grey);
+
+
+            .icon
+            {
+                display: block;
+                flex-shrink: 0;
+
+                width: 32px;
+
+
+                img
+                {
+                    display: block;
+
+                    width: 100%;
+                }
+            }
+
+
+            .text
+            {
+                position: relative;
+
+                min-width: 0;
+                padding-left: calc(var(--inner_gap_s) + 1px);
+
+
+                &::before
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+
+                    display: block;
+
+                    width: 1px;
+                    height: 40px;
+
+                    content: '';
+                    transform: translateY(-50%);
+
+                    background: var(--divider_color);
+                }
+            }
+        }
+    }
+
+
+    .icon_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xxs);
+
+        margin-top: var(--block_padding);
+
+        --card_padding: var(--inner_gap_l);
+
+
+        .title
+        {
+            width: 528px;
+
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--light_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .repatriation_from_russia
+    {
+        .info_card
+        {
+            .top
+            {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: var(--inner_gap_s);
+
+
+                .title
+                {
+                    width: auto;
+                }
+            }
+
+
+            .stat
+            {
+                width: auto;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .repatriation_from_russia
+    {
+        .block_head
+        {
+            .title
+            {
+                width: auto;
+            }
+
+
+            .desc
+            {
+                width: 623px;
+            }
+        }
+
+
+        .info_card
+        {
+            padding: var(--inner_gap_s);
+
+            font-size: var(--font_size_15);
+
+
+            .top
+            {
+                align-items: center;
+                flex-direction: row;
+                gap: var(--inner_gap_l);
+
+                padding-bottom: 0;
+
+                border-bottom: none;
+
+
+                .title
+                {
+                    flex-shrink: 0;
+
+                    width: 282px;
+
+                    font-family: var(--font_family_secondary);
+                    font-size: var(--font_size_l);
+                    font-weight: 600;
+                    line-height: 130%;
+                }
+            }
+
+
+            .stat
+            {
+                flex-shrink: 1;
+
+                min-width: 0;
+                padding: var(--inner_gap_xxs);
+            }
+        }
+
+
+        .icon_card
+        {
+            font-size: var(--font_size_15);
+
+            --card_padding: var(--inner_gap_s);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .repatriation_from_russia
+    {
+        .info_card
+        {
+            gap: var(--inner_gap_s);
+
+            padding: 0;
+
+            border-radius: 0;
+            background: none;
+
+
+            .top
+            {
+                align-items: stretch;
+                flex-direction: column;
+                gap: var(--inner_gap_s);
+            }
+
+
+            .stat
+            {
+                border-radius: var(--border_radius_xs);
+                background: var(--bg_white);
+            }
+
+
+            .note
+            {
+                margin-top: var(--inner_gap_xxs);
+
+                background: var(--bg_white);
+            }
+        }
+
+
+        .icon_card
+        {
+            margin-top: var(--inner_gap_l);
+        }
+    }
+}

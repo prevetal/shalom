@@ -1,0 +1,561 @@
+/*--------------------------
+    Repatriation program
+--------------------------*/
+.repatriation_program
+{
+    .block_head
+    {
+        .desc
+        {
+            width: 623px;
+        }
+    }
+
+
+    .steps_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_l);
+
+        margin-top: var(--inner_gap_l);
+        padding: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+            line-height: 130%;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .steps
+        {
+            display: flex;
+            align-content: stretch;
+            align-items: stretch;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: var(--inner_gap_xxs);
+        }
+
+
+        .step
+        {
+            display: flex;
+            align-items: center;
+            flex: 1 0 0;
+            flex-direction: column;
+            gap: var(--inner_gap_s);
+
+            min-width: 0;
+            padding: var(--inner_gap_s);
+
+            border-radius: var(--border_radius_xs);
+            background: var(--bg_grey);
+
+
+            .icon
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                width: 32px;
+
+                border-radius: 50%;
+                background: var(--bg_gradient_primary);
+
+                aspect-ratio: 1 / 1;
+
+
+                img
+                {
+                    display: block;
+
+                    height: 16px;
+                }
+            }
+
+
+            .name
+            {
+                text-align: center;
+
+                color: var(--dark_strong_color);
+            }
+        }
+
+
+        .arr
+        {
+            display: block;
+            align-self: center;
+            flex-shrink: 0;
+
+            width: 10px;
+
+            color: var(--dark_color);
+
+            aspect-ratio: 10 / 19;
+        }
+    }
+
+
+    .text_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+
+        margin-top: var(--inner_gap_l);
+        padding: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .text
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_l);
+        }
+
+
+        .note
+        {
+            position: relative;
+
+            display: flex;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_s);
+
+            margin-block: calc(var(--inner_gap_xs) * -1);
+            margin-inline: calc(var(--inner_gap_l) * -1);
+            padding-block: var(--inner_gap_xs);
+            padding-inline: var(--inner_gap_l);
+
+            background: var(--bg_red_light);
+
+
+            .icon
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                width: 36px;
+
+                color: var(--red_color);
+                border-radius: 50%;
+                background: var(--bg_white);
+
+                aspect-ratio: 1 / 1;
+
+
+                svg
+                {
+                    display: block;
+
+                    width: 16px;
+
+                    aspect-ratio: 1 / 1;
+                }
+            }
+
+
+            p
+            {
+                flex: 1 0 0;
+
+                min-width: 0;
+            }
+        }
+    }
+
+
+    .help_card
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: var(--inner_gap_l);
+
+        margin-top: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_primary);
+
+
+        .image
+        {
+            position: relative;
+
+            display: block;
+            overflow: hidden;
+            align-self: stretch;
+            flex-shrink: 0;
+
+            width: 228px;
+            max-width: 100%;
+            min-height: 171px;
+
+            border-radius: var(--border_radius);
+        }
+
+
+        .data
+        {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            gap: var(--inner_gap_xxs);
+
+            min-width: 0;
+            padding-right: var(--inner_gap);
+        }
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--light_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+
+            color: var(--light_blue_color);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .repatriation_program
+    {
+        .steps_card
+        {
+            .steps
+            {
+                align-items: center;
+                flex-direction: column;
+            }
+
+
+            .step
+            {
+                flex: 0 0 auto;
+                flex-direction: row;
+
+                width: 100%;
+                padding: var(--inner_gap_xs);
+
+
+                .name
+                {
+                    text-align: left;
+
+
+                    br
+                    {
+                        display: none;
+                    }
+                }
+            }
+
+
+            .arr
+            {
+                margin-block: calc(var(--inner_gap_5) * -1);
+
+                transform: rotate(90deg);
+            }
+        }
+
+
+        .help_card
+        {
+            .data
+            {
+                padding-block: var(--inner_gap_s);
+            }
+
+
+            .title
+            {
+                br
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .repatriation_program
+    {
+        .block_head
+        {
+            --block_head_offset: var(--inner_gap_l);
+        }
+
+
+        .steps_card
+        {
+            gap: var(--inner_gap_s);
+
+            padding: var(--inner_gap_s);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+
+
+            .steps
+            {
+                align-items: stretch;
+                flex-direction: row;
+            }
+
+
+            .step
+            {
+                flex: 1 0 0;
+                flex-direction: column;
+
+                width: auto;
+
+                font-size: var(--font_size_15);
+
+
+                .name
+                {
+                    text-align: center;
+
+
+                    br
+                    {
+                        display: inline;
+                    }
+                }
+            }
+
+
+            .arr
+            {
+                margin-block: 0;
+
+                transform: none;
+            }
+        }
+
+
+        .text_card
+        {
+            padding: var(--inner_gap_s);
+
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+
+
+            .note
+            {
+                margin-inline: calc(var(--inner_gap_s) * -1);
+                padding-inline: var(--inner_gap_s);
+            }
+        }
+
+
+        .help_card
+        {
+            font-size: var(--font_size_15);
+
+
+            .data
+            {
+                padding-block: 0;
+            }
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .repatriation_program
+    {
+        .steps_card
+        {
+            .steps
+            {
+                align-items: center;
+                flex-direction: column;
+            }
+
+
+            .step
+            {
+                flex: 0 0 auto;
+                flex-direction: row;
+
+                width: 100%;
+
+
+                .name
+                {
+                    text-align: left;
+
+
+                    br
+                    {
+                        display: none;
+                    }
+                }
+            }
+
+
+            .arr
+            {
+                margin-block: calc(var(--inner_gap_5) * -1);
+
+                transform: rotate(90deg);
+            }
+        }
+
+
+        .text_card
+        {
+            gap: var(--inner_gap_xs);
+
+            margin-bottom: calc(var(--inner_gap_l) * 2);
+            padding: 0;
+
+            border-radius: 0;
+            background: none;
+
+
+            .title
+            {
+                line-height: 130%;
+            }
+
+
+            .text
+            {
+                gap: var(--inner_gap_s);
+            }
+
+
+            .note
+            {
+                margin-block: 0;
+                margin-inline: 0;
+                padding: var(--inner_gap_s);
+
+                border: 1px solid var(--border_red_color);
+                border-radius: var(--border_radius_xs);
+
+
+                .icon
+                {
+                    position: absolute;
+                    top: var(--inner_gap_xxs);
+                    right: var(--inner_gap_10);
+
+                    width: 16px;
+
+                    color: var(--light_color);
+                    background: var(--red_color);
+
+
+                    svg
+                    {
+                        width: 8px;
+                    }
+                }
+            }
+        }
+
+
+        .help_card
+        {
+            align-items: stretch;
+            flex-direction: column;
+
+
+            .image
+            {
+                width: 100%;
+                min-height: 0;
+
+                aspect-ratio: 343 / 171;
+            }
+
+
+            .data
+            {
+                padding-block: 0 var(--inner_gap_s);
+                padding-inline: var(--inner_gap_s);
+            }
+        }
+    }
+}

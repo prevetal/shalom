@@ -1,0 +1,302 @@
+/*----------------------
+    Flight documents
+----------------------*/
+.flight_documents
+{
+    .block_head
+    {
+        .title
+        {
+            width: 836px;
+        }
+
+
+        .desc
+        {
+            width: 743px;
+        }
+    }
+
+
+    .documents
+    {
+        .grid_row
+        {
+            --items_per_line: 2;
+            --gap_x: var(--inner_gap_s);
+            --gap_y: var(--inner_gap_s);
+        }
+
+
+        .item
+        {
+            position: relative;
+
+            padding: var(--inner_gap_s);
+            padding-left: calc(var(--inner_gap_s) * 2 + var(--inner_gap_xs));
+
+            color: var(--dark_strong_color);
+            border-radius: var(--border_radius_xs);
+            background: var(--bg_white);
+
+
+            &::before
+            {
+                position: absolute;
+                top: var(--inner_gap);
+                left: var(--inner_gap_s);
+
+                display: block;
+
+                width: 16px;
+
+                content: '';
+
+                border-radius: 50%;
+                background: url(../../../images/ic_check_small.svg) 50% / 8px auto no-repeat, var(--bg_gradient_primary);
+
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+
+
+    .note
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_10);
+
+        margin-top: var(--inner_gap_l);
+    }
+
+
+    .help_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_l);
+
+        margin-top: var(--block_padding);
+        padding: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_primary);
+
+
+        .info
+        {
+            display: flex;
+            align-content: stretch;
+            align-items: stretch;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_l);
+        }
+
+
+        .image
+        {
+            position: relative;
+
+            display: block;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            width: 150px;
+
+            border-radius: var(--border_radius_xs);
+        }
+
+
+        .data
+        {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            gap: var(--inner_gap_xxs);
+
+            min-width: 0;
+        }
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--light_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            color: var(--light_blue_color);
+        }
+
+
+        .cta
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_l);
+
+            padding-top: var(--inner_gap_l);
+
+            border-top: 1px solid var(--divider_color);
+        }
+
+
+        .text
+        {
+            width: 207px;
+            max-width: 100%;
+
+            color: var(--light_color);
+        }
+
+
+        .cta_btn
+        {
+            flex-shrink: 0;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .flight_documents
+    {
+        .block_head
+        {
+            .title,
+            .desc
+            {
+                width: auto;
+            }
+        }
+
+
+        .documents
+        {
+            font-size: var(--font_size_15);
+        }
+
+
+        .note
+        {
+            margin-top: var(--block_padding);
+
+            font-size: var(--font_size_15);
+        }
+
+
+        .help_card
+        {
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .flight_documents
+    {
+        .documents
+        {
+            .grid_row
+            {
+                --items_per_line: 1;
+            }
+
+
+            .item
+            {
+                padding: 0;
+                padding-left: calc(16px + var(--inner_gap_xs));
+
+                border-radius: 0;
+                background: none;
+
+
+                &::before
+                {
+                    top: var(--inner_gap_xxxs);
+                    left: 0;
+                }
+            }
+        }
+
+
+        .note
+        {
+            margin-top: var(--inner_gap_l);
+        }
+
+
+        .help_card
+        {
+            gap: var(--inner_gap_s);
+
+            padding: var(--inner_gap_s);
+
+
+            .info
+            {
+                flex-direction: column;
+                gap: var(--inner_gap_s);
+            }
+
+
+            .image
+            {
+                width: 100%;
+
+                aspect-ratio: 311 / 200;
+            }
+
+
+            .data
+            {
+                flex: 0 0 auto;
+            }
+
+
+            .cta
+            {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: var(--inner_gap_s);
+
+                padding-top: 0;
+
+                border-top: none;
+            }
+
+
+            .cta_btn
+            {
+                font-size: var(--font_size_15);
+            }
+        }
+    }
+}

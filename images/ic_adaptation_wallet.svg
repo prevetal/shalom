@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="wallet_7653697 (1) 1">
+<path id="Vector" d="M14 4.00001H3.33333C2.76067 4.00001 2.21867 3.75201 1.84333 3.33401C2.21 2.92468 2.74267 2.66668 3.33333 2.66668H15.3333C16.2053 2.66268 16.2047 1.33668 15.3333 1.33334H3.33333C1.49267 1.33334 0 2.82601 0 4.66668V11.3333C0 13.174 1.49267 14.6667 3.33333 14.6667H14C15.1047 14.6667 16 13.7713 16 12.6667V6.00001C16 4.89534 15.1047 4.00001 14 4.00001ZM13.3333 10C12.4613 9.99601 12.4613 8.67068 13.3333 8.66668C14.2053 8.67068 14.2053 9.99601 13.3333 10Z" fill="url(#paint0_radial_0_12)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_12" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(7.7477 8.00001) rotate(90) scale(6.66667 7.7477)">
+<stop stop-color="#2CA4F6"/>
+<stop offset="1" stop-color="#0B8AE4"/>
+</radialGradient>
+</defs>
+</svg>

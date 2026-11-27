@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="house-chimney_9246364 1">
+<path id="Vector" d="M14.3286 5.48079L13.8217 5.08416H13.8339V2.16774H12.6672V4.18065L9.07858 1.37272C8.44392 0.87576 7.55667 0.87576 6.922 1.37272L1.67142 5.48079C1.245 5.81443 1 6.31722 1 6.8591V15H5.66667V9.75044C5.66667 9.10591 6.18875 8.58387 6.83333 8.58387H9.16667C9.81125 8.58387 10.3333 9.10591 10.3333 9.75044V15H15V6.8591C15 6.31722 14.755 5.81443 14.3286 5.48079Z" fill="url(#paint0_radial_0_6)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(7.77924 8) rotate(90) scale(7 6.77924)">
+<stop stop-color="#2CA4F6"/>
+<stop offset="1" stop-color="#0B8AE4"/>
+</radialGradient>
+</defs>
+</svg>

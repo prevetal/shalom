@@ -1,0 +1,281 @@
+/*---------
+    FAQ
+---------*/
+.faq
+{
+    .accordion
+    {
+        display: grid;
+        align-items: start;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--inner_gap_xxs);
+    }
+
+
+    .col
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xxs);
+    }
+
+
+    .accordion_item
+    {
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        .top
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--inner_gap_l);
+
+            padding-block: var(--inner_gap_xs);
+            padding-inline: var(--inner_gap_s);
+
+            cursor: pointer;
+        }
+
+
+        .title
+        {
+            min-width: 0;
+
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_l);
+            font-weight: 600;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .icon
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 45px;
+
+            transition: color .2s linear, background .2s linear;
+
+            color: var(--primary_color);
+            border-radius: 50%;
+            background: var(--bg_grey);
+
+            aspect-ratio: 1 / 1;
+
+
+            svg
+            {
+                display: block;
+
+                width: 24px;
+
+                transition: transform .3s linear;
+
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+
+        .hidden
+        {
+            display: none;
+
+            padding-block: var(--inner_gap_xxxs) var(--inner_gap_xs);
+            padding-inline: var(--inner_gap_s);
+
+
+            & > *
+            {
+                width: 570px;
+                max-width: 100%;
+            }
+
+
+            & > * + *
+            {
+                margin-top: var(--inner_gap_xs);
+            }
+        }
+
+
+        &.active
+        {
+            .icon
+            {
+                svg
+                {
+                    transform: rotate(45deg);
+                }
+            }
+
+
+            .hidden
+            {
+                display: block;
+            }
+        }
+
+
+        @media (hover: hover) and (pointer: fine)
+        {
+            &:not(.active)
+            {
+                .top
+                {
+                    &:hover
+                    {
+                        .icon
+                        {
+                            color: var(--light_color);
+                            background: var(--bg_primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .faq
+    {
+        .accordion
+        {
+            grid-template-columns: 100%;
+        }
+
+
+        .col
+        {
+            display: contents;
+        }
+
+
+        .accordion_item
+        {
+            &:nth-child(2)
+            {
+                order: 2;
+            }
+
+
+            &:nth-child(3)
+            {
+                order: 3;
+            }
+
+
+            &:nth-child(4)
+            {
+                order: 4;
+            }
+
+
+            &:nth-child(5)
+            {
+                order: 5;
+            }
+
+
+            &:nth-child(6)
+            {
+                order: 6;
+            }
+
+
+            &:nth-child(7)
+            {
+                order: 7;
+            }
+
+
+            &:nth-child(8)
+            {
+                order: 8;
+            }
+
+
+            &:nth-child(9)
+            {
+                order: 9;
+            }
+
+
+            &:nth-child(n + 10)
+            {
+                order: 10;
+            }
+
+
+            .hidden
+            {
+                font-size: var(--font_size_15);
+
+
+                & > *
+                {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .faq
+    {
+        .accordion_item
+        {
+            border-radius: var(--border_radius_s);
+
+
+            .top
+            {
+                padding-inline: var(--inner_gap_xs);
+            }
+
+
+            .title
+            {
+                font-size: var(--font_size);
+            }
+
+
+            .icon
+            {
+                width: 35px;
+
+
+                svg
+                {
+                    width: 19px;
+                }
+            }
+
+
+            .hidden
+            {
+                padding-block: 0 var(--inner_gap_xs);
+                padding-inline: var(--inner_gap_xs);
+            }
+        }
+    }
+}

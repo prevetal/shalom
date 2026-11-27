@@ -1,0 +1,252 @@
+/*-------------------------
+    Citizenship process
+-------------------------*/
+.citizenship_process
+{
+    .block_head
+    {
+        .title
+        {
+            width: 675px;
+        }
+    }
+
+
+    .cards
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+
+        counter-reset: cards;
+    }
+
+
+    .card
+    {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xxs);
+
+        padding-block: var(--inner_gap_s);
+        padding-inline: var(--inner_gap_s) calc(140px + var(--inner_gap) * 2);
+
+        counter-increment: cards;
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        &.bonus
+        {
+            gap: var(--inner_gap_s);
+
+            padding-right: var(--inner_gap_s);
+
+            counter-increment: none;
+
+            border: 1px solid var(--light_blue_color);
+
+
+            .name
+            {
+                &::before
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    .top
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: var(--inner_gap_xs);
+    }
+
+
+    .label
+    {
+        flex-shrink: 0;
+
+        margin-block: calc(var(--inner_gap_5) * -1);
+        margin-left: calc(var(--inner_gap_s) * -1 - 1px);
+        padding-block: var(--inner_gap_5);
+        padding-inline: var(--inner_gap) var(--inner_gap_10);
+
+        font-weight: 400;
+
+        color: var(--light_color);
+        border-radius: 0 var(--border_radius_max) var(--border_radius_max) 0;
+        background: var(--bg_gradient_primary);
+    }
+
+
+    .name
+    {
+        position: relative;
+        z-index: 3;
+
+        font-size: var(--font_size_xl);
+        font-weight: 400;
+
+        color: var(--dark_strong_color);
+
+
+        &::before
+        {
+            display: inline;
+
+            content: counter(cards) '/ ';
+
+            color: var(--primary_color);
+        }
+    }
+
+
+    .desc
+    {
+        position: relative;
+        z-index: 3;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xs);
+    }
+
+
+    .image
+    {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: var(--inner_gap);
+
+        display: block;
+
+        width: 140px;
+        max-width: 100%;
+
+        transform: translateY(-50%);
+        pointer-events: none;
+
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .citizenship_process
+    {
+        .block_head
+        {
+            --block_head_offset: var(--inner_gap_l);
+        }
+
+
+        .cards
+        {
+            gap: var(--inner_gap_xs);
+        }
+
+
+        .card
+        {
+            padding-right: calc(140px + var(--inner_gap_l));
+
+            font-size: var(--font_size_15);
+
+
+            &.bonus
+            {
+                padding-right: var(--inner_gap_s);
+            }
+        }
+
+
+        .top
+        {
+            gap: var(--inner_gap_10);
+        }
+
+
+        .label
+        {
+            font-size: var(--font_size_xs);
+        }
+
+
+        .name
+        {
+            font-size: var(--font_size_l);
+        }
+
+
+        .image
+        {
+            right: var(--inner_gap_10);
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .citizenship_process
+    {
+        .card
+        {
+            padding-top: 64px;
+            padding-right: var(--inner_gap_s);
+
+
+            &.bonus
+            {
+                gap: var(--inner_gap_xxs);
+
+                padding-top: var(--block_padding);
+            }
+        }
+
+
+        .top
+        {
+            display: block;
+        }
+
+
+        .label
+        {
+            position: absolute;
+            top: var(--inner_gap_15);
+            right: -1px;
+
+            margin-left: 0;
+            padding-inline: var(--inner_gap_10) var(--inner_gap);
+
+            border-radius: var(--border_radius_max) 0 0 var(--border_radius_max);
+        }
+
+
+        .image
+        {
+            top: var(--inner_gap_xxxs);
+            right: var(--inner_gap_xxxs);
+
+            width: 100px;
+
+            transform: none;
+        }
+    }
+}

@@ -1,0 +1,142 @@
+:root
+{
+    --swiper-navigation-size: 45px;
+
+
+    @media (max-width: 767px)
+    {
+        --swiper-navigation-size: 36px;
+    }
+}
+
+
+.swiper-button-next,
+.swiper-button-prev
+{
+    transition: color .2s linear, background .2s linear;
+
+    border: 1px solid var(--light_blue_color);
+    border-radius: 50%;
+    background: var(--bg_white);
+
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-color: var(--primary_color);
+    --swiper-navigation-sides-offset: 0;
+
+
+    .icon
+    {
+        display: block;
+
+        width: 11px;
+        height: auto;
+
+        transform: translateX(1.5px);
+
+        aspect-ratio: 10 / 19;
+
+
+        .swiper-button-prev &
+        {
+            transform: rotate(180deg) translateX(1.5px);
+        }
+
+
+        @media (max-width: 767px)
+        {
+            width: 9px;
+        }
+    }
+
+
+    @media (hover: hover) and (pointer: fine)
+    {
+        &:hover
+        {
+            background: var(--bg_primary);
+
+            --swiper-navigation-color: var(--light_color);
+        }
+    }
+}
+
+
+.swiper-controls
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--inner_gap_xxs);
+
+    margin-top: var(--inner_gap_l);
+
+
+    .swiper-button-next,
+    .swiper-button-prev
+    {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+
+        margin-top: 0;
+    }
+
+
+    @media print, (max-width: 1023px)
+    {
+        margin-top: var(--inner_gap_s);
+    }
+
+
+    @media (max-width: 767px)
+    {
+        gap: var(--inner_gap_xxxs);
+    }
+}
+
+
+.swiper-pagination
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--inner_gap_s);
+
+    pointer-events: none;
+
+    --swiper-pagination-bottom: 0;
+    --swiper-pagination-bullet-inactive-color: var(--grey_color);
+    --swiper-pagination-bullet-hover-color: var(--secondary_color);
+    --swiper-pagination-bullet-active-color: var(--primary_color);
+
+
+    .swiper-pagination-bullet
+    {
+        transition: background .2s linear;
+        pointer-events: auto;
+
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50%;
+
+
+        @media (hover: hover) and (pointer: fine)
+        {
+            &:hover
+            {
+                background: var(--swiper-pagination-bullet-hover-color);
+            }
+        }
+
+
+        &.active
+        {
+            background: var(--swiper-pagination-bullet-active-color);
+        }
+    }
+}

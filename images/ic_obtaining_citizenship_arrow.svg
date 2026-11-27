@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow">
+<rect width="32" height="32" rx="16" fill="url(#paint0_linear_0_5)"/>
+<path id="Arrow 1" d="M10.6667 15.5C10.3905 15.5 10.1667 15.7239 10.1667 16C10.1667 16.2761 10.3905 16.5 10.6667 16.5V16V15.5ZM10.6667 16V16.5H21.3333V16V15.5H10.6667V16ZM21.6869 16.3536C21.8821 16.1583 21.8821 15.8417 21.6869 15.6464L18.5049 12.4645C18.3096 12.2692 17.9931 12.2692 17.7978 12.4645C17.6025 12.6597 17.6025 12.9763 17.7978 13.1716L20.6262 16L17.7978 18.8284C17.6025 19.0237 17.6025 19.3403 17.7978 19.5355C17.9931 19.7308 18.3096 19.7308 18.5049 19.5355L21.6869 16.3536Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_5" x1="0" y1="16" x2="32" y2="16" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8111"/>
+<stop offset="1" stop-color="#FF9333"/>
+</linearGradient>
+</defs>
+</svg>

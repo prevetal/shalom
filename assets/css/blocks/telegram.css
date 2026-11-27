@@ -1,0 +1,261 @@
+/*--------------
+    Telegram
+--------------*/
+.telegram
+{
+    .data
+    {
+        position: relative;
+
+        padding-block: var(--block_padding);
+        padding-inline: var(--block_padding);
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_gradient_primary);
+    }
+
+
+    .info
+    {
+        position: relative;
+        z-index: 3;
+
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+    }
+
+
+    .title
+    {
+        font-family: var(--font_family_secondary);
+        font-size: var(--font_size_title);
+        font-weight: 600;
+        line-height: 130%;
+    }
+
+
+    .mob_br
+    {
+        display: none;
+    }
+
+
+    .tags
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: var(--inner_gap_xxs);
+
+
+        .tag
+        {
+            padding-block: var(--inner_gap_5);
+            padding-inline: var(--inner_gap_10);
+
+            font-size: var(--font_size_15);
+
+            border-radius: var(--border_radius_xs);
+            background: var(--bg_primary_dark);
+        }
+    }
+
+
+    .desc
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xs);
+
+        width: 491px;
+        max-width: 100%;
+
+        font-size: var(--font_size_xxl);
+    }
+
+
+    .cta_btn
+    {
+        margin-top: var(--inner_gap_xxs);
+    }
+
+
+    .image
+    {
+        position: absolute;
+        z-index: 1;
+        top: var(--inner_gap_10);
+        right: var(--inner_gap_10);
+        bottom: var(--inner_gap_10);
+
+        display: block;
+
+        width: 48%;
+
+        pointer-events: none;
+
+        mask: url(../../../images/telegram_img_mask.svg) center / 100% 100% no-repeat;
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .telegram
+    {
+        .title
+        {
+            font-size: var(--font_size_title_s);
+        }
+
+
+        .desc
+        {
+            width: 402px;
+
+            font-size: var(--font_size_l);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .telegram
+    {
+        --font_size_title_s: 26px;
+
+
+        .data
+        {
+            padding-block: var(--block_padding_s);
+            padding-inline: var(--block_padding_s);
+
+            border-radius: var(--border_radius);
+        }
+
+
+        .tags
+        {
+            gap: var(--inner_gap_xxxs);
+
+
+            .tag
+            {
+                font-size: var(--font_size_xs);
+            }
+        }
+
+
+        .desc
+        {
+            font-size: var(--font_size_15);
+        }
+
+
+        .cta_btn
+        {
+            margin-top: 0;
+        }
+
+
+        .image
+        {
+            top: var(--inner_gap_xxs);
+            right: var(--inner_gap_xxs);
+            bottom: var(--inner_gap_xxs);
+
+            width: 39%;
+
+            mask: url(../../../images/telegram_img_mask_tablet.svg) center / 100% 100% no-repeat;
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .telegram
+    {
+        --font_size_title_s: 23px;
+
+
+        .data
+        {
+            display: flex;
+            flex-direction: column;
+
+            padding-block: var(--inner_gap_xxxs);
+            padding-inline: var(--inner_gap_xxxs);
+        }
+
+
+        .info
+        {
+            align-items: center;
+
+            padding-block: var(--inner_gap_s);
+            padding-inline: var(--inner_gap_s);
+
+            text-align: center;
+        }
+
+
+        .title
+        {
+            width: 326px;
+            max-width: 100%;
+
+            line-height: 120%;
+        }
+
+
+        .mob_br
+        {
+            display: inline;
+        }
+
+
+        .desktop_br
+        {
+            display: none;
+        }
+
+
+        .tags
+        {
+            display: none;
+        }
+
+
+        .cta_btn
+        {
+            margin-top: var(--inner_gap_xxs);
+
+            font-size: var(--font_size_15);
+        }
+
+
+        .image
+        {
+            position: static;
+
+            order: -1;
+
+            width: 100%;
+
+            mask: url(../../../images/telegram_img_mask_mob.svg) center / 100% 100% no-repeat;
+            aspect-ratio: 335 / 204;
+        }
+    }
+}

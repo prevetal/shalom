@@ -1,0 +1,260 @@
+/*----------------
+    Adaptation
+----------------*/
+.adaptation
+{
+    .block_head
+    {
+        --block_head_offset: var(--inner_gap_l);
+
+
+        .title
+        {
+            width: 836px;
+        }
+
+
+        .desc
+        {
+            width: 743px;
+        }
+    }
+
+
+    .support
+    {
+        .grid_row
+        {
+            --items_per_line: 4;
+            --gap_x: var(--inner_gap_xxs);
+            --gap_y: var(--inner_gap_xxs);
+        }
+    }
+
+
+    .item
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--inner_gap_10);
+
+        padding: var(--inner_gap_s);
+
+        text-align: center;
+
+        color: var(--dark_strong_color);
+        border-radius: var(--border_radius_xs);
+        background: var(--bg_white);
+
+
+        &:nth-child(2)
+        {
+            order: 1;
+        }
+
+
+        &:nth-child(4)
+        {
+            order: 2;
+        }
+
+
+        .icon
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 32px;
+
+            border-radius: 50%;
+            background: var(--bg_grey);
+
+            aspect-ratio: 1 / 1;
+
+
+            img
+            {
+                display: block;
+
+                width: 16px;
+            }
+        }
+    }
+
+
+    .programs
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_10);
+
+        margin-top: var(--inner_gap_l);
+    }
+
+
+    .help_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+
+        margin-top: var(--block_padding);
+        padding: var(--inner_gap_l);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+        }
+
+
+        .note
+        {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            margin-top: var(--inner_gap_xxs);
+            padding: var(--inner_gap_xxs) var(--inner_gap_l);
+
+            color: var(--dark_strong_color);
+            border-radius: 0 var(--border_radius_xs) var(--border_radius_xs) 0;
+            background: var(--bg_primary_light);
+
+
+            &::before
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+
+                display: block;
+
+                width: 3px;
+
+                content: '';
+
+                background: var(--bg_gradient_primary);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .adaptation
+    {
+        .block_head
+        {
+            .title,
+            .desc
+            {
+                width: auto;
+            }
+
+
+            .desc
+            {
+                font-size: var(--font_size_15);
+            }
+        }
+
+
+        .support
+        {
+            .grid_row
+            {
+                --items_per_line: 2;
+            }
+        }
+
+
+        .item
+        {
+            flex-direction: row;
+
+            padding: var(--inner_gap_xxs);
+
+            font-size: var(--font_size_15);
+
+            text-align: left;
+
+
+            &:nth-child(n)
+            {
+                order: 0;
+            }
+        }
+
+
+        .programs
+        {
+            font-size: var(--font_size_15);
+        }
+
+
+        .help_card
+        {
+            padding: var(--inner_gap_s);
+
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .adaptation
+    {
+        .support
+        {
+            .grid_row
+            {
+                --items_per_line: 1;
+            }
+        }
+
+
+        .help_card
+        {
+            margin-top: var(--inner_gap_l);
+            padding: 0;
+
+            background: none;
+        }
+    }
+}

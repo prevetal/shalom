@@ -1,0 +1,207 @@
+/*-----------------------------
+    Citizenship eligibility
+-----------------------------*/
+.citizenship_eligibility
+{
+    .block_head
+    {
+        .title
+        {
+            width: 675px;
+        }
+    }
+
+
+    .swiper
+    {
+        overflow: visible;
+
+        --spaceBetween: var(--inner_gap_xxs);
+
+
+        &:not(.swiper-initialized)
+        {
+            .swiper-wrapper
+            {
+                flex-wrap: wrap;
+                gap: var(--inner_gap_s);
+            }
+        }
+
+
+        .swiper-wrapper
+        {
+            counter-reset: cards;
+        }
+
+
+        .swiper-slide
+        {
+            width: calc((100% - var(--inner_gap_s)) / 2);
+            height: auto;
+
+            counter-increment: cards;
+        }
+    }
+
+
+    .icon_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xxs);
+
+        height: 100%;
+
+        --card_radius: var(--border_radius_s);
+
+
+        .title
+        {
+            font-size: var(--font_size_xl);
+            font-weight: 400;
+
+            color: var(--dark_strong_color);
+
+
+            &::before
+            {
+                display: none;
+
+                margin-bottom: var(--inner_gap_s);
+
+                content: counter(cards) '/' var(--slides_total, '');
+
+                font-size: var(--font_size_15);
+                font-weight: 300;
+
+                color: var(--placeholder_color);
+            }
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            width: 370px;
+            max-width: 100%;
+        }
+    }
+
+
+    .swiper-controls
+    {
+        display: none;
+    }
+
+
+    .action
+    {
+        margin-top: var(--block_padding);
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .citizenship_eligibility
+    {
+        .action
+        {
+            .desc
+            {
+                br
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .citizenship_eligibility
+    {
+        .icon_card
+        {
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+
+
+            .desc
+            {
+                width: auto;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .citizenship_eligibility
+    {
+        .block_head
+        {
+            .title
+            {
+                width: auto;
+            }
+        }
+
+
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    flex-wrap: nowrap;
+                    gap: var(--spaceBetween);
+                }
+            }
+
+
+            .swiper-slide
+            {
+                width: 253px;
+            }
+        }
+
+
+        .icon_card
+        {
+            .title
+            {
+                max-width: none;
+
+
+                &::before
+                {
+                    display: block;
+                }
+            }
+        }
+
+
+        .swiper-controls
+        {
+            display: flex;
+        }
+    }
+}

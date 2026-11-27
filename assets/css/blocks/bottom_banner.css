@@ -1,0 +1,156 @@
+/*-------------------
+    Bottom banner
+-------------------*/
+.bottom_banner
+{
+    position: fixed;
+    z-index: 50;
+    right: 40px;
+    bottom: 32px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--inner_gap_l);
+
+    padding-block: var(--inner_gap_xxxs);
+    padding-inline: var(--inner_gap_s) var(--inner_gap_xxxs);
+
+    font-family: var(--font_family_secondary);
+    font-size: var(--font_size_s);
+    font-weight: 600;
+
+    color: var(--light_color);
+    border-radius: var(--border_radius_max);
+    background: var(--bg_primary);
+
+
+    .text
+    {
+        line-height: 130%;
+    }
+
+
+    .btn
+    {
+        position: relative;
+
+        overflow: hidden;
+        flex-shrink: 0;
+
+        width: 210px;
+        height: 45px;
+        padding-inline: var(--inner_gap_xxxs);
+
+        transition: color .2s linear;
+
+        border-radius: var(--border_radius_max);
+        background: var(--bg_gradient_secondary);
+
+
+        &::before
+        {
+            position: absolute;
+            z-index: 1;
+            inset: -1px;
+
+            display: block;
+
+            content: '';
+            transition: opacity .2s linear;
+
+            opacity: 0;
+            background: var(--bg_white);
+        }
+
+
+        span
+        {
+            position: relative;
+            z-index: 3;
+        }
+
+
+        @media (hover: hover) and (pointer: fine)
+        {
+            &:hover
+            {
+                color: var(--primary_color);
+
+
+                &::before
+                {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .bottom_banner
+    {
+        right: var(--cont_padding);
+        bottom: var(--inner_gap_l);
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .bottom_banner
+    {
+        right: var(--inner_gap_s);
+        bottom: var(--inner_gap_s);
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .wrap
+    {
+        &:has(> .bottom_banner)
+        {
+            padding-bottom: 60px;
+        }
+    }
+
+
+    .bottom_banner
+    {
+        right: 0;
+        bottom: 0;
+
+        gap: var(--inner_gap_xxs);
+
+        width: 100%;
+        padding-block: var(--inner_gap_xxs);
+        padding-inline: var(--inner_gap_xs);
+
+        font-size: var(--font_size_xs);
+
+        border-radius: 0;
+
+
+        .text
+        {
+            flex: 1;
+        }
+
+
+        .btn
+        {
+            width: 173px;
+            height: 44px;
+        }
+    }
+}

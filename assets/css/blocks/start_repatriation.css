@@ -1,0 +1,241 @@
+/*------------------------
+    Start repatriation
+------------------------*/
+.start_repatriation
+{
+    .block_head
+    {
+        .title
+        {
+            width: 828px;
+        }
+    }
+
+
+    .video
+    {
+        border-radius: var(--border_radius);
+
+        aspect-ratio: 869 / 489;
+        --play_size: 80px;
+        --play_icon_size: 30px;
+    }
+
+
+    .cards
+    {
+        margin-top: var(--block_padding);
+
+
+        .grid_row
+        {
+            --items_per_line: 2;
+            --gap_x: var(--inner_gap_s);
+            --gap_y: var(--inner_gap_xxs);
+        }
+    }
+
+
+    .icon_card
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xxs);
+
+
+        .title
+        {
+            font-size: var(--font_size_xl);
+            font-weight: 400;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            width: 370px;
+            max-width: 100%;
+        }
+    }
+
+
+    .channel
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: var(--inner_gap_l);
+
+        margin-top: var(--block_padding);
+
+
+        .text
+        {
+            width: 474px;
+            max-width: 100%;
+
+            font-size: var(--font_size_xl);
+
+            color: var(--dark_strong_color);
+        }
+    }
+
+
+    .youtube_btn
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: var(--inner_gap_xxs);
+
+        min-height: 57px;
+        padding-inline: var(--block_padding);
+
+        font-family: var(--font_family_secondary);
+        font-weight: 600;
+
+        transition: opacity .2s linear;
+        white-space: nowrap;
+        text-decoration: none;
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_max);
+        background: var(--bg_primary);
+
+
+        .icon
+        {
+            display: block;
+            flex-shrink: 0;
+
+            width: 24px;
+
+            aspect-ratio: 1 / 1;
+        }
+
+
+        @media (hover: hover) and (pointer: fine)
+        {
+            &:hover
+            {
+                opacity: .85;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .start_repatriation
+    {
+        .block_head
+        {
+            .title
+            {
+                width: auto;
+            }
+        }
+
+
+        .icon_card
+        {
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+
+
+            .desc
+            {
+                width: auto;
+            }
+        }
+
+
+        .channel
+        {
+            .text
+            {
+                width: 403px;
+
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .start_repatriation
+    {
+        .block_head
+        {
+            --block_head_offset: var(--block_padding);
+        }
+
+
+        .video
+        {
+            border-radius: var(--border_radius_xs);
+
+            --play_size: 56px;
+            --play_icon_size: 21px;
+        }
+
+
+        .cards
+        {
+            margin-top: var(--inner_gap_l);
+
+
+            .grid_row
+            {
+                --items_per_line: 1;
+            }
+        }
+
+
+        .channel
+        {
+            align-items: center;
+            flex-direction: column;
+            gap: var(--inner_gap);
+
+            margin-top: var(--inner_gap_l);
+
+            text-align: center;
+
+
+            .text
+            {
+                width: 305px;
+
+                font-size: var(--font_size);
+            }
+        }
+
+
+        .youtube_btn
+        {
+            font-size: var(--font_size_15);
+        }
+    }
+}

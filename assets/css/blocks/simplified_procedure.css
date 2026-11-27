@@ -1,0 +1,356 @@
+/*--------------------------
+    Simplified procedure
+--------------------------*/
+.simplified_procedure
+{
+    --year_space: 84px;
+
+
+    .block_head
+    {
+        .title
+        {
+            width: 533px;
+        }
+    }
+
+
+    .year
+    {
+        position: absolute;
+        z-index: 3;
+        top: var(--inner_gap_s);
+        right: var(--inner_gap_s);
+
+        padding: var(--inner_gap_xxxs) var(--inner_gap_xxs);
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_xs);
+        background: var(--bg_gradient_primary);
+    }
+
+
+    .history_card
+    {
+        position: relative;
+
+        display: flex;
+        align-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: var(--inner_gap_l);
+
+        padding: var(--inner_gap_xxs);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_white);
+
+
+        .data
+        {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            min-width: 0;
+            padding: var(--inner_gap_s);
+        }
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--dark_strong_color);
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+        }
+
+
+        .image
+        {
+            position: relative;
+
+            display: block;
+            flex-shrink: 0;
+
+            width: 299px;
+
+            mask: url(../../../images/simplified_procedure_img_mask.svg) 0 0 / 100% 100% no-repeat;
+
+            aspect-ratio: 299 / 258;
+        }
+    }
+
+
+    .history_text
+    {
+        display: none;
+        flex-direction: column;
+        gap: var(--inner_gap_10);
+
+        margin-top: var(--inner_gap_l);
+    }
+
+
+    .today_card
+    {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+
+        margin-top: var(--inner_gap_s);
+        padding: var(--card_padding);
+
+        border-radius: var(--border_radius);
+        background: var(--bg_white);
+
+        --card_padding: var(--inner_gap_l);
+
+
+        .title
+        {
+            width: 746px;
+            max-width: calc(100% + var(--card_padding) - var(--year_space));
+
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_xxl);
+            font-weight: 600;
+
+            color: var(--dark_strong_color);
+
+
+            span
+            {
+                color: var(--red_color);
+            }
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            color: var(--dark_strong_color);
+
+
+            b
+            {
+                font-weight: 400;
+            }
+        }
+
+
+        .note
+        {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_10);
+
+            padding: var(--inner_gap_xxs) var(--inner_gap_l);
+
+            border-radius: 0 var(--border_radius_xs) var(--border_radius_xs) 0;
+            background: var(--bg_primary_light);
+
+
+            &::before
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+
+                display: block;
+
+                width: 3px;
+
+                content: '';
+
+                background: var(--bg_gradient_primary);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .simplified_procedure
+    {
+        .history_card
+        {
+            .image
+            {
+                width: 240px;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .simplified_procedure
+    {
+        .block_head
+        {
+            .title
+            {
+                width: auto;
+            }
+        }
+
+
+        .year
+        {
+            font-size: var(--font_size_15);
+        }
+
+
+        .history_card
+        {
+            gap: 0;
+
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                font-size: var(--font_size_l);
+            }
+
+
+            .hide_tablet
+            {
+                display: none;
+            }
+
+
+            .image
+            {
+                width: 299px;
+
+                mask-image: url(../../../images/simplified_procedure_img_mask_tablet.svg);
+
+                aspect-ratio: 299 / 162;
+            }
+        }
+
+
+        .history_text
+        {
+            display: flex;
+
+            font-size: var(--font_size_15);
+        }
+
+
+        .today_card
+        {
+            margin-top: var(--block_padding);
+
+            font-size: var(--font_size_15);
+
+
+            .title
+            {
+                width: 598px;
+
+                font-size: var(--font_size_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .simplified_procedure
+    {
+        .block_head
+        {
+            --block_head_offset: var(--block_padding);
+        }
+
+
+        .history_card
+        {
+            align-items: stretch;
+            flex-direction: column;
+
+            border-radius: var(--border_radius);
+
+
+            .data
+            {
+                flex: 0 0 auto;
+
+                padding: var(--inner_gap_xxs);
+            }
+
+
+            .title
+            {
+                width: 238px;
+                max-width: calc(100% + var(--inner_gap_s) - var(--year_space));
+            }
+
+
+            .hide_tablet
+            {
+                display: block;
+            }
+
+
+            .image
+            {
+                width: 100%;
+
+                mask-image: url(../../../images/simplified_procedure_img_mask_mob.svg);
+
+                aspect-ratio: 327 / 200;
+            }
+        }
+
+
+        .history_text
+        {
+            display: none;
+        }
+
+
+        .today_card
+        {
+            margin-top: var(--inner_gap_s);
+
+            --card_padding: var(--inner_gap_s);
+
+
+            .title
+            {
+                width: 293px;
+            }
+        }
+    }
+}
